@@ -1,0 +1,112 @@
+#market_news {
+    margin: 10px 0 20px;
+}
+
+.market_line {
+    display: grid;
+    grid-template-columns: 220px 1020px 220px;
+    gap: 70px;
+    margin-bottom: 20px;
+}
+
+.market_line aside {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+.lower_market_line {
+    display: flex;
+    justify-content: space-between ;
+}
+
+.lower_market_line .big_version {
+    display: grid;
+    grid-template-columns: 220px 220px 220px;
+    gap: 20px;
+}
+
+.lower_market_line .little_version {
+    display: none;
+}
+
+@media screen and (max-width: 1700px) {
+    #market_news {
+        width: 1420px;
+    }
+    .market_line {
+        display: flex;
+        justify-content: center;
+    }
+    .market_line aside {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1550px) {
+    #market_news {
+        width: 1180px;
+        height: 460px;
+        display: block;
+    }
+
+    .lower_market_line .big_version {
+        display: none;
+    }
+    .lower_market_line .little_version {
+        display: grid;
+        grid-template-columns: repeat(5, 220px);
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width:1350px) {
+    #market_news {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lower_market_line .little_version {
+        grid-template-columns: repeat(4, 220px);
+    }
+
+    .lower_market_line .little_version .five {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    #market_news {
+        width: 700px;
+        height: 480px;
+        margin: 20px 0 20px;
+    }
+    .lower_market_line {
+        height: 100%;
+    }
+    .lower_market_line .little_version {
+        grid-template-columns: repeat(3, 220px);
+        height: 100%;
+    }
+
+    .lower_market_line .little_version .fourth {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    #market_news {
+        width: 460px;
+        height: 680px;
+    }
+
+    .lower_market_line .little_version {
+        grid-template-columns: 220px 220px;
+        grid-template-rows: 130px 130px;
+        height: 100%;
+    }
+    .lower_market_line .little_version .fourth {
+        display: flex;
+    }
+}

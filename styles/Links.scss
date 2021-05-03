@@ -1,0 +1,23 @@
+// Required Core Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+@import './News_banner.css';
+
+@import './News_banner_little.css';
+
+@import './Market.css';
+
+@import './Market_news.css';
+
+@import './Carousel.css';
+
+@import './Trending_tickers.css';
+
+@import './Watchlist_item.css';
+
+@import './Aside_news.css';
+
+@import './News_details.css';

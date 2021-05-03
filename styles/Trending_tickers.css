@@ -1,0 +1,97 @@
+.trending_tickers {
+    width: 100%;
+}
+  
+.trending_tickers .ticker {
+    width: 100%;
+    margin-bottom: 30px;
+}   
+
+.trending_tickers .ticker > span {
+    color: #393939;
+    font-size: 15x;
+}
+
+.trending_tickers .ticker div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.trending_tickers .ticker div p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1620px) {
+    .regularMarketChangePercent {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1480px) {
+    .regularMarketChangePercent {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .regularMarketChangePercent {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .trending_tickers {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 30px;
+    }
+
+    .trending_tickers .ticker {
+        margin: 0;
+    }
+
+    .regularMarketChangePercent {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .trending_tickers {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 30px;
+    }
+
+    .trending_tickers .ticker {
+        width: 380px;
+        justify-self: center;
+    }
+
+    .trending_tickers .ticker > span {
+        font-size: 15px;
+    }
+    
+    .trending_tickers .ticker div p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .trending_tickers .ticker {
+        width: 320px;
+        justify-self: center;
+    }
+
+    .regularMarketChangePercent {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .trending_tickers .ticker {
+        width: 90%;
+        justify-self: center;
+    }
+}
