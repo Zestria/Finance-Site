@@ -1,10 +1,12 @@
 .trending_tickers {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
   
 .trending_tickers .ticker {
     width: 100%;
-    margin-bottom: 30px;
+    padding: 15px 0;
 }   
 
 .trending_tickers .ticker > span {
@@ -15,6 +17,7 @@
 .trending_tickers .ticker div {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .trending_tickers .ticker div p {
@@ -22,76 +25,44 @@
     font-weight: 500;
 }
 
-@media screen and (max-width: 1620px) {
-    .regularMarketChangePercent {
+@media screen and (max-width: 1750px) {
+    .ticker .regularMarketChangePercent {
         display: none;
     }
 }
 
-@media screen and (max-width: 1480px) {
-    .regularMarketChangePercent {
+@media screen and (max-width: 1600px) {
+    .ticker .regularMarketChangePercent {
         display: block;
     }
 }
 
-@media screen and (max-width: 1240px) {
-    .regularMarketChangePercent {
+@media screen and (max-width: 1300px) {
+    .ticker .regularMarketChangePercent {
         display: none;
     }
 }
 
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1000px) {
     .trending_tickers {
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 30px;
+        overflow-x: auto;
+        flex-direction: row;
     }
 
-    .trending_tickers .ticker {
-        margin: 0;
-    }
-
-    .regularMarketChangePercent {
-        display: block;
-    }
-}
-
-@media screen and (max-width: 720px) {
-    .trending_tickers {
-        display: grid;
-        grid-template-columns: 100%;
-        gap: 30px;
-    }
-
-    .trending_tickers .ticker {
-        width: 380px;
-        justify-self: center;
-    }
-
-    .trending_tickers .ticker > span {
-        font-size: 15px;
-    }
-    
-    .trending_tickers .ticker div p {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-
-    .trending_tickers .ticker {
-        width: 320px;
-        justify-self: center;
-    }
-
-    .regularMarketChangePercent {
+    .trending_tickers::-webkit-scrollbar {
         display: none;
     }
+    .trending_tickers .ticker {
+        margin: 0 20px;
+    }
+
+    .trending_tickers .ticker div {
+        width: 220px;
+    }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 750px) {
     .trending_tickers .ticker {
-        width: 90%;
-        justify-self: center;
+        margin: 0 10px;
     }
 }

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
 /* COMMON STYLES */
 
 * {
@@ -10,14 +8,12 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
   
 ::-webkit-scrollbar-thumb {
@@ -30,16 +26,12 @@ body {
   background:rgb(71, 71, 71); 
 }
 
-#container {
-  width: 100%;
-  height: 100%;
-}
-
 main {
-  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 button {
@@ -49,14 +41,6 @@ button {
 li {
   list-style: none;
 }
-
-/* NEWS HTML TEXT */
-/*
-.caption-wrapper.caption-aligned-with-image {
-  margin: 0!important;
-  font-size: 14px;
-  color: #383838; 
-}*/
 
 
 /* CLASS FUNCTIONS */
@@ -73,84 +57,165 @@ li {
   color: #B20909;
 }
 
-.page_grid_container {
-  width: 1600px;
-  display: grid;
-  grid-template-columns: 330px auto 330px;
-  gap: 90px;
+
+.vertical_line {
+  border: 1px solid black;
+  height: 300px;
+  width: 0;
+  margin: 0 50px;
 }
 
-.header_page {
-  font-size: 48px;
-  margin: 50px 0;
+.page_container {
+  display: flex;
+  align-items: center;
 }
 
-@media screen and (max-width: 1720px) {
-  .page_grid_container {
-    gap: 50px;
-    width: 1480px;
-  }
+.aside_column {
+  width: 350px;
 }
 
-@media screen and (max-width: 1620px) {
-  .page_grid_container {
-    width: 1380px;
-    grid-template-columns: 260px auto 260px;
-  }
-
-  .header_page {
-    font-size: 40px;
-  }
+.aside_header {
+  font-size: 52px;
 }
 
-@media screen and (max-width: 1480px) {
-  .page_grid_container {
-    width: 1140px;
-    grid-template-columns: auto 330px;
+@media screen and (max-width: 1750px) {
+  .page_container {
+    width: 1500px;
   }
 
-  .header_page {
-    font-size: 36px;
+  .aside_column {
+    width: 310px;
+  }
+
+  .aside_header {
+    font-size: 48px;
   }
 }
 
-@media screen and (max-width: 1240px) {
-  .page_grid_container {
-    width: 1140px;
-    grid-template-columns: auto 260px;
+@media screen and (max-width: 1600px) {
+  .page_container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 6fr 4fr;
+    width: 1160px; /* fix it */
+    height: 90vh;
   }
 
-  .header_page {
-    font-size: 32px;
+  .main_column {
+    height: 100%;
+  }
+
+  .aside_header {
+    font-size: 46px;
+    text-align: right;
+  }
+
+  .aside_column {
+    grid-column: 1;
+  }
+
+  .news_details {
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+  }
+
+  .vertical_line.left {
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+  }
+
+  .vertical_line.right {
+    display: none;
   }
 }
 
-@media screen and (max-width: 1170px) {
-  .page_grid_container {
-    width: 760px;
+@media screen and (max-width: 1300px) {
+  .aside_header {
+    font-size: 42px;
+  }
+  .page_container {
+    width: 1100px;
+    grid-template-columns: auto auto auto;
+  }
+  .vertical_line.left {
+    margin: 0 25px;
+    border: 1px solid white;
+  }
+  .aside_header {
+    width: 100%;
+  }
+  .trending_tickers {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .page_container {
+    width: 910px;
+  }
+
+  .main_column {
+    width: 600px;
+  }
+
+  .aside_column {
+    width: 260px;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  main {
+    height: auto;
+    margin: 30px 0;
+  }
+
+  .page_container {
+    height: auto;
+    width: 750px;
     grid-template-columns: 100%;
     grid-template-rows: auto auto auto;
   }
-}
 
-@media screen and (max-width: 860px) {
-  .page_grid_container {
-    width: 680px;
-  }
-
-  .header_page {
-    font-size: 40px;
-    margin: 20px;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .page_grid_container {
+  .main_column {
     width: 100%;
   }
 
-  .header_page {
-    font-size: 40px;
-    margin: 0 20px 20px 20px;
+  .vertical_line {
+    display: none;
+  }
+
+  .aside_column > .trending_tickers {
+    grid-row: 2;
+    margin: 10px 0;
+  }
+  .aside_column {
+    width: 100%;
+  }
+  .aside_header {
+    text-align: left;
+  }
+
+  /* overflow-y че за хернь происходит, почему он вырубается на 800*/
+  
+}
+
+@media screen and (max-width: 800px) {
+  .page_container {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .page_container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .aside_header {
+    font-size: 36px;
   }
 }

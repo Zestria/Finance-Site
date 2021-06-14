@@ -6,7 +6,7 @@ import Littletickers from '../components/Littletickers'
 
 const Main = () => {
     // fake data
-    const news = [
+    /*const news = [
         {
             title: "Twitter's Dorsey auctions first ever tweet as digital memorabilia",
             timestamp: 1615341030212,
@@ -126,7 +126,7 @@ const Main = () => {
             regularMarketChange: 129.15,
             regularMarketChangePercent: 0.26
         }
-    ]
+    ]*/
     // functions
     const cuttingNum = num => {
         let s = num + ''

@@ -1,32 +1,33 @@
 .watchlist_item {
-    width: 100%;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
 }
 
-.watchlist_item > img {
-    width: 100%;
-    height: 400px;
-    margin: 0 0 25px 0;
-}
-
-.watchlist_item article {
+.aside_column article {
     margin: 30px 0;
     line-height: 125%;
 }
 
-.watchlist_item article em {
+.aside_column article em {
     font-size: 18px;
     font-weight: 500;
 }
 
-.watchlist_item article p {
+.aside_column article p {
     margin: 10px 0;
+    font-size: 16px;
+}
+
+.watchlist_symbols {
+    overflow-y: auto;
+    height: 90vh;
 }
 
 .symbols-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin: 10px 0;
+    width: 750px; /* fix it */
 }
 
 .symbols-grid h3 {
@@ -44,42 +45,51 @@
     color: rgb(50, 50, 50);
 }
 
-@media screen and (max-width:1170px) {
-    .watchlist_item article,
-    .watchlist_item span {
-        line-height: 133%;
-        font-size: 23px;
+@media screen and (max-width:1600px) {
+    .aside_column_watchlist_article {
+        display: none;
+    }
+    .page_watchlist {
+        grid-template-rows: auto;
+    }
+
+    .watchlist_symbols {
+        height: 85vh;
     }
 }
 
-@media screen and (max-width:860px) {
-    .watchlist_item article,
-    .watchlist_item span {
-        font-size: 26px;
-    }
-}
+@media screen and (max-width: 1200px) {
 
-@media screen and (max-width:720px) {
-    .watchlist_item article,
-    .watchlist_item span {
-        margin: 0 10px;
-        /*font-size: 30px;*/
-    }
-
-    .watchlist_item article em {
-        font-size: 30px;
-    }
-
-    .symbols-grid {
-        margin: 10px 20px;
-    }
-}
-
-@media screen and (max-width: 400px) {
     .symbols-grid {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: auto;
     }
     .regularMarketVolume {
         display: none;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .watchlist_symbols {
+        height: 100%;
+    }
+
+    .regularMarketVolume {
+        display: initial;
+    }
+
+    .symbols-grid {
+        width: 100%;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .regularMarketVolume {
+        display: none;
+    }
+
+    .symbols-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

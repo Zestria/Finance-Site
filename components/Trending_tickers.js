@@ -10,7 +10,7 @@ const Trending_tickers = ({ trending_tickers }) =>
                 <div key={i} className='ticker'>
                     <div>    
                         <p>{el.symbol}</p>
-                        <p className="price">{`${el.regularMarketPrice}`}</p>
+                        <p className="price">{`${el.regularMarketPrice.toFixed(2)}`}</p>
                         <p className={trigger}>{`${el.regularMarketChange.toFixed(2)}`}</p>
                         <p className={trigger + ' regularMarketChangePercent'}>{`${el.regularMarketChangePercent.toFixed(2)}%`}</p>
                     </div>

@@ -8,7 +8,10 @@ const News_details = ({ article, offset }) => (
                 <h3>{article.brand}</h3>
                 <h4>{new Date(article.time).toUTCString(offset+"")+''}</h4>
             </div>
-            <article>{ ReactHtmlParser(article.markup) }</article>
+            <article>{ ReactHtmlParser(article.markup) }</article> 
+            { /*<article>
+                <p>Hello, World!</p>
+            </article>*/ }
         </div>
     </div>
 )
