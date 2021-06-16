@@ -7,9 +7,9 @@
 
 # testing
 /coverage
-/pages/main.js
-/pages/polygon.js
-/pages/quotes.js
+pages/main.js
+pages/polygon.js
+pages/quotes.js
 
 # next.js
 /.next/
@@ -17,7 +17,7 @@
 
 # production
 /build
-/.next
+.next/
 
 # misc
 .DS_Store
@@ -36,9 +36,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-#key
-key.js
 
 #package
 package-lock.json
