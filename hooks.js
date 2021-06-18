@@ -2,7 +2,6 @@ export const defineSide = (str, anotherTxt="", classStr="") => {
     let s = str +"";
     let trigger = 'growth';
     if (s.search('-')!==-1) trigger='fall';
-
     if(s.search('.')===-1) return <p className={trigger}>{s}</p>;
 
     return <p className={trigger + ' ' + classStr}>{trigger==='growth' ? '+' + Number(s).toFixed(2) : Number(s).toFixed(2)}{anotherTxt}</p>;
